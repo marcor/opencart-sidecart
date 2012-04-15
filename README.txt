@@ -1,5 +1,5 @@
 ===============================================
-   OPENCART Side Cart Module 1.0
+   OPENCART Side Cart Module 1.01
 ===============================================
 
 Loosely based on Ben Johnson's Cart Module v.1.7 available from here:
