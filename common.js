@@ -192,8 +192,8 @@ function animateProduct(image, cart){
 		top : cart_offset.top + 'px',
 		left : cart_offset.left + 'px',
 		opacity : 0.0,
-		/*width : cart.width(),
-		height : cart.height()*/
+		width : 80,
+		height : 80
 	};
 	$('#temp').animate(params, 'slow', false, function () {
 		$('#temp').remove();
