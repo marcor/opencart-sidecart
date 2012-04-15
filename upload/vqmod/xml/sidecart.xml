@@ -1,0 +1,34 @@
+<modification>
+	<id>Side shopping cart</id>
+	<version>1.0</version>
+	<vqmver>2.1</vqmver>
+	<author>marcor@github.com</author>
+	<file name="catalog/view/theme/*/template/module/cart.tpl">
+		<operation>
+			<search position="replace"><![CDATA[
+			onclick="$('#cart').load('index.php?route=module/cart&remove=<?php echo $product['key']; ?> #cart > *');"
+			]]></search>
+			<add><![CDATA[
+			onclick="removeFromCart('<?php echo $product['key']; ?>');"
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[
+			onclick="$('#cart').load('index.php?route=module/cart&remove=<?php echo $voucher['key']; ?> #cart > *');"
+			]]></search>
+			<add><![CDATA[
+			onclick="removeFromCart('<?php echo $voucher['key']; ?>');"
+			]]></add>
+		</operation>
+	</file>
+	<file name="catalog/view/theme/*/template/product/product.tpl">
+		<operation>
+			<search position="after"><![CDATA[
+				$('#cart-total').html(json['total']);
+			]]></search>
+			<add><![CDATA[
+				reloadMiniCartContent();
+			]]></add>
+		</operation>
+	</file>
+</modification>
